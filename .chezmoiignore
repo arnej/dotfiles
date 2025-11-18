@@ -1,0 +1,4 @@
+{{- if ne .chezmoi.os "linux" }}
+dot_config/niri
+dot_local/bin/start-swaybg.sh
+{{- end }}
