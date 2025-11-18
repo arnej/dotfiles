@@ -1,0 +1,93 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": ["niri/workspaces"],
+    "modules-right": ["custom/duplicity", "network", "temperature#cpu", "temperature#gpu", "cpu", "memory", "tray", "custom/weather", "pulseaudio", "idle_inhibitor", "clock"],
+    "niri/workspaces": {
+        "format": "{index} {icon} {name}",
+    },
+    "clock": {
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip": false
+    },
+    "network": {
+        "interface": "enp4s0",
+        "format": "🠛 {bandwidthDownOctets:2} 🠙 {bandwidthUpOctets:2}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "interval": 2,
+        "on-click": "termite -e nmtui",
+    "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "phone": [" ", " ", " ", " "],
+            "default": ["🔈", "🔉", "🔊"]
+        },
+        "scroll-step": 10,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/storage": {
+        "format": "{} ",
+        "format-alt": "{percentage}% ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "~/.config/waybar/modules/storage.sh"
+    },
+    "memory": {
+        "interval": 2,
+        "format": "💾 {}%",
+        "max-length": 10
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "💻 {usage}%",
+        "max-length": 10
+    },
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 70,
+        "format-critical": " 💻 {temperatureC}°C ",
+        "format": " 💻 {temperatureC}°C ",
+        "interval": 2
+    },
+    "temperature#gpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-critical": " 🌀 {temperatureC}°C ",
+        "format": " 🌀 {temperatureC}°C ",
+        "interval": 2
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh Rheine",
+        "exec-if": "ping wttr.in -c1"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 18
+    }
+}
