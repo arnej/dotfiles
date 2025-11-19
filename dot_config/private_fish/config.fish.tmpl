@@ -25,6 +25,8 @@ if status is-interactive
     abbr -a ip 'ip -c=auto'
     abbr -a todo 'vim ~/syncthing-arne/todo/todo.txt'
 
+    fish_add_path -p ~/.local/bin ~/.cargo/bin
+
     # Initialize some stuff
     starship init fish | source
     zoxide init fish | source
