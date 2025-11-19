@@ -45,7 +45,7 @@ window#waybar {
     color:      rgba(238, 46, 36, 1);
 }
 
-#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #temperature.cpu, #temperature.gpu, {
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #temperature.cpu, #temperature.gpu {
     color:      white;
     margin:     0px 6px 0px 10px;
     min-width:  25px;
