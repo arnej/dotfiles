@@ -27,6 +27,13 @@ if status is-interactive
 
     fish_add_path -p ~/.local/bin ~/.cargo/bin
 
+    # Init ssh-agent
+    if not pgrep --full ssh-agent | string collect >/dev/null
+        eval (ssh-agent -c)
+        set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+        set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+    end
+
     # Initialize some stuff
     starship init fish | source
     zoxide init fish | source
