@@ -6,5 +6,13 @@ return {
       sidebars = "transparent",
       floats = "transparent",
     },
+    on_highlights = function(highlights, _)
+      highlights.LineNrAbove = {
+        fg = "#888888",
+      }
+      highlights.LineNrBelow = {
+        fg = "#888888",
+      }
+    end,
   },
 }
