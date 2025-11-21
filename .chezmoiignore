@@ -1,4 +1,5 @@
 {{- if ne .chezmoi.os "linux" }}
 .config/niri
+.config/waybar
 .local/bin/start-swaybg.sh
 {{- end }}
