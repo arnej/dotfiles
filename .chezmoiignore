@@ -1,4 +1,4 @@
-{{- if ne .chezmoi.os "linux" }}
+{{- if (or (ne .chezmoi.os "linux") (contains "WSL" .chezmoi.kernel.osrelease)) }}
 .config/niri
 .config/waybar
 .local/bin/start-swaybg.sh
