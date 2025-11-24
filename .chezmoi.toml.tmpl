@@ -1,7 +1,11 @@
 {{- $isWorkComputer := promptBoolOnce . "isWorkComputer" "Is this your work computer?" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $name := promptStringOnce . "name" "Full name" -}}
 
 [data]
     isWorkComputer = {{ $isWorkComputer }}
+    email = {{ $email | quote }}
+    name = {{ $name | quote }}
 
 [diff]
     pager = "delta"

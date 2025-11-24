@@ -1,0 +1,40 @@
+[user]
+    email = {{ .email }}
+    name = {{ .name }}
+
+[core]
+    filemode = false
+    autocrlf = input
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = false
+
+[merge]
+    tool = fugitive
+
+[rerere]
+    enabled = false
+
+[pull]
+    rebase = merges
+
+[color]
+    ui = auto
+
+[init]
+    defaultBranch = master
+
+[push]
+    autoSetupRemote = true
+
+[diff]
+    colorMoved = dimmed-zebra
+
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gvdiffsplit!\" \"$MERGED\"
