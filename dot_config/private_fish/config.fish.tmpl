@@ -51,10 +51,12 @@ if status is-interactive
         set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
     end
 
+    # Activate mise to be able to use other stuff installed via mise
+    mise activate fish | source
+
     # Initialize some stuff
     starship init fish | source
     zoxide init fish | source
-    mise activate fish | source
 
     fastfetch
 end
