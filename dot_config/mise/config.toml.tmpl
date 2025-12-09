@@ -1,0 +1,15 @@
+[tools]
+node = "latest"
+npm = "latest"
+{{- if (ne .chezmoi.osRelease.id "arch") }}
+chezmoi = "latest"
+neovim = "latest"
+usage = "latest"
+{{ end }}
+
+[env]
+EDITOR = "nvim"
+VISUAL = "nvim"
+{{- if (eq .chezmoi.osRelease.id "ubuntu") }}
+DOTNET_ROOT = "/var/snap/dotnet/common/dotnet"
+{{ end }}
