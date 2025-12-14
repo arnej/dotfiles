@@ -13,3 +13,23 @@ vim.keymap.set("i", ";", ";")
 -- Disable crazy movement
 -- vim.keymap.set({ "n", "x" }, "j", "j")
 -- vim.keymap.set({ "n", "x" }, "k", "k")
+
+local wk = require("which-key")
+
+wk.add({
+  { "<leader>;", group = "diffview" },
+  {
+    "<leader>;o",
+    function()
+      require("diffview").open({})
+    end,
+    desc = "Open",
+  },
+  {
+    "<leader>;c",
+    function()
+      require("diffview").close()
+    end,
+    desc = "Close",
+  },
+})
