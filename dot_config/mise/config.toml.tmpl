@@ -1,6 +1,8 @@
 [tools]
+{{- if (.isWorkComputer) }}
 node = "latest"
 npm = "latest"
+{{ end }}
 {{- if (ne .chezmoi.osRelease.id "arch") }}
 chezmoi = "latest"
 neovim = "latest"
