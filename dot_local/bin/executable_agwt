@@ -1,0 +1,23 @@
+#!/usr/bin/fish
+
+read --nchars 1 type --prompt-str="Type ([b]ug/[f]eature): "
+read ticket --prompt-str="Enter ticket #: "
+read description --prompt-str="Enter description: "
+read branch --prompt-str="Enter base branch (default=master): "
+
+switch $type
+    case b
+        set type bug
+    case '*'
+        set type feature
+end
+
+switch $branch
+    case ''
+        set origin origin/master
+    case '*'
+        set origin origin/$branch
+end
+
+set relpath ../$type-{$ticket}_$description
+echo git worktree add --no-track -b $type/{$ticket}_$description $relpath $origin | sh
