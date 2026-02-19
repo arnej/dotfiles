@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 read --nchars 1 type --prompt-str="Type ([b]ug/[f]eature): "
 read ticket --prompt-str="Enter ticket #: "
