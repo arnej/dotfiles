@@ -301,6 +301,7 @@ binds {
     Mod+D { spawn "fuzzel"; }
     Super+X { spawn "swaylock" "-i" "~/Pictures/wallpaper.png"; }
     Mod+P { spawn "rofi-rbw"; }
+    Mod+W { spawn "alacritty" "-e" "wiremix"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
